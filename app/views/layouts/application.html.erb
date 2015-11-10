@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatronSample</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+  <%= link_to "Home", root_path %>
+  <%= link_to "Sign In", signin_path if !signed_in? %>
+  <%= link_to "Sign Up", signup_path if !signed_in? %>
+  <%= link_to "Sign Out", signout_path, method: "delete", data: {confirm: "Are you sure?"} if signed_in? %>
+</nav>
+
+<div class='yield-container'>
+<%= yield %>
+</div>
+
+</body>
+</html>

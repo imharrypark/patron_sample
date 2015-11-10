@@ -1,0 +1,14 @@
+<h3>Sign In</h3>
+
+<div class='form'>
+  <%= form_for @user, url: {controller: "session", action: "create"} do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Sign In" %>
+  <% end %>
+</div>
+
+<%= flash[:notice] if flash[:notice] %>

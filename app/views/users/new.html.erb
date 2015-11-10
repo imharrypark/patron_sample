@@ -1,0 +1,18 @@
+<h3>Create Account</h3>
+
+<div class='form'>
+  <%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.label :password_confirmation, "Confirm password" %>
+    <%= f.password_field :password_confirmation %><br>
+    <%= f.label :type %>
+    <%= f.text_field :type %><br>
+
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<%= flash[:notice] if flash[:notice] %>
